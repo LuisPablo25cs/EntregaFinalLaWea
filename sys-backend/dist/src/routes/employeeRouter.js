@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const employeeController_1 = require("../controllers/employeeController");
+const employeeRouter = (0, express_1.Router)();
+employeeRouter.get('/', employeeController_1.getALLEmployees);
+employeeRouter.get('/:id', employeeController_1.getEmployeeById);
+employeeRouter.post('/', employeeController_1.createEmployee);
+employeeRouter.patch('/:id', employeeController_1.updateEmployee);
+employeeRouter.delete('/:id', employeeController_1.deleteEmployee);
+exports.default = employeeRouter;
